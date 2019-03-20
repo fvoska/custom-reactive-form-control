@@ -1,6 +1,6 @@
 Initial control value: <input [(ngModel)]="initialValue">
-<button (click)="onBuildFormClick()">Build form</button>
-<button (click)="onDestroyFormClick()">Destroy form</button>
+<button (click)="onBuildFormClick()" [disabled]="form">Build form</button>
+<button (click)="onDestroyFormClick()" [disabled]="!form">Destroy form</button>
 
 <ng-container *ngIf="form">
   <hr>
@@ -11,15 +11,11 @@ Initial control value: <input [(ngModel)]="initialValue">
     <button type="submit">Submit</button>
   </form>
 
-  <hr>
-
-  Form touched: {{ form.touched }}
-
-  <button (click)="onEnableDisableClick()">Enable/disable form</button>
-
-  <hr>
-
-  Form value:
-
+  <p><button (click)="onEnableDisableClick()">Enable/disable form</button></p>
+  <p>Form touched: {{ form.touched }}</p>
+  <p>Form value:</p>
   <pre>{{ form.value | json }}</pre>
 </ng-container>
+
+<hr>
+Open console to check out the logging
