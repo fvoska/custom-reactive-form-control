@@ -42,10 +42,6 @@ export class MyInputComponent implements ControlValueAccessor {
     console.log('onInput', inputElement.value);
 
     this.inputValue = inputElement.value;
-  }
-
-  public onClick(): void {
-    console.log('setFormTouched');
 
     this.setFormTouched();
   }
