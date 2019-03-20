@@ -1,0 +1,7 @@
+<input
+  [type]="isPassword ? 'password' : 'text'"
+  [value]="inputValue"
+  [disabled]="disabled$ | async"
+  (click)="onClick()"
+  (input)="onInput($event)"
+>
